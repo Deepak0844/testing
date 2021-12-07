@@ -42,11 +42,11 @@ app.get("/pizza",async(request, response) => {
      response.send(result);
 })
 
-app.post("/pizza",async(request, response) => {
-    const data = request.body;
-        const result = await addPizza(data);
-        response.send(result);
-})
+// app.post("/pizza",async(request, response) => {
+//     const data = request.body;
+//         const result = await addPizza(data);
+//         response.send(result);
+// })
 
 
 
