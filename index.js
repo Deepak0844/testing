@@ -38,7 +38,7 @@ app.get("/home",async(request, response) => {
 })
 
 app.get("/pizza",async(request, response) => {
-    const result = await pizzaList();
+    const result = await client.db("b28wd").collection("pizza").find().toArray();
      response.send(result);
 })
 

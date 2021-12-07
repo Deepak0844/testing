@@ -1,9 +1,9 @@
 import { client } from "./index.js";
 import { ObjectId } from "mongodb";
 
-async function pizzaList() {
-    return await client.db("b28wd").collection("pizza").find().toArray();
-  }
+// async function pizzaList() {
+//     return await client.db("b28wd").collection("pizza").find().toArray();
+//   }
   
 //   async function addPizza(data) {
 //     return await client.db("b28wd").collection("pizza").insertMany(data);
@@ -38,8 +38,8 @@ async function pizzaList() {
 //   async function succesful() {
 //     return await client.db("b28wd").collection("checkout").findOne();
 //   }
-  export {
-    pizzaList,
+  // export {
+    // pizzaList,
     // addPizza,
     // addCart,
     // cartList,
@@ -47,5 +47,5 @@ async function pizzaList() {
     // deleteItem,
     // checkOut,
     // succesful,
-  };
+  // };
   
