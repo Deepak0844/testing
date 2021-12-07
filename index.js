@@ -48,4 +48,20 @@ app.get("/pizza/:id",async (request, response) => {
 });
 
 
+ app.get("/cart",async (request, response) => {
+    const result = await client.db("b28wd").collection("cart").find().toArray();
+    response.send(result);
+ })
+
+ app.post("/cart",async (request, response) => {
+  const cartItem = request.body;
+  const result = await client.db("b28wd").collection("cart").insertOne(cartItem);
+  response.send(result);
+})
+
+
+
+
+
+
 app.listen(PORT,()=>{ console.log("Server started", PORT) })
