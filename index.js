@@ -1,14 +1,6 @@
 import express from 'express';
-// import {
-//   pizzaList,
-//   addPizza,
-//   addCart,
-//   cartList,
-//   getPizzaById,
-//   deleteItem,
-//   checkOut,
-//   succesful,
-// } from "./Helper.js";
+import { ObjectId } from "mongodb";
+
 import {MongoClient} from "mongodb";
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -48,6 +40,12 @@ app.post("/pizza",async(request, response) => {
         response.send(result);
 })
 
+
+app.get("/pizza/:id",async (request, response) => {
+ const { id } = request.params;
+ const result =await client.db("b28wd").collection("pizza").findOne({ _id: ObjectId(id) });
+  result? response.send(result) : response.status(404).send({ msg: "no found" })
+});
 
 
 app.listen(PORT,()=>{ console.log("Server started", PORT) })
